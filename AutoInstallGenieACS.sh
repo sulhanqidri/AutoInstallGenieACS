@@ -184,6 +184,9 @@ else
     echo -e "${GREEN}Multi tab full parameter? (y/n)${NC}"
     read installtabfull
     if [ "$installtabfull" != "y" ]; then
+        echo -e "${GREEN}MultiTab Kosong di install.${NC}"
+        exit 1
+    else
         cd ..
         git clone https://github.com/sulhanqidri/MultiTabGenieACS
         cd MultiTabGenieACS
