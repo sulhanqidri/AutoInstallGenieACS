@@ -181,6 +181,7 @@ if [ "$installtab" != "y" ]; then
     echo -e "${GREEN}Install dibatalkan. Tidak ada perubahan dalam server anda.${NC}"
     exit 1
 fi
+cd ..
 
 git clone https://github.com/sulhanqidri/MultiTabGenieACS
 
@@ -190,6 +191,9 @@ chmod +x install.sh
 
 ./install.sh
 
+cd ..
+
+rm -r AutoInstallGenieACS/ MultiTabGenieACS/
 #Sukses
 echo -e "${GREEN}============================================================================${NC}"
 echo -e "${GREEN}========== GenieACS UI akses port 3000. : http://$local_ip:3000 ============${NC}"
