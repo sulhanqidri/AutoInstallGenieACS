@@ -180,16 +180,17 @@ read installtab
 if [ "$installtab" != "y" ]; then
     echo -e "${GREEN}Install dibatalkan. Tidak ada perubahan dalam server anda.${NC}"
     exit 1
+else
+    echo -e "${GREEN}Multi tab full parameter? (y/n)${NC}"
+    read installtab
+    if [ "$installtab" != "y" ]; then
+        cd ..
+        git clone https://github.com/sulhanqidri/MultiTabGenieACS
+        cd MultiTabGenieACS
+        chmod +x install.sh
+        ./install.sh
+    fi
 fi
-cd ..
-
-git clone https://github.com/sulhanqidri/MultiTabGenieACS
-
-cd MultiTabGenieACS
-
-chmod +x install.sh
-
-./install.sh
 
 cd ..
 
