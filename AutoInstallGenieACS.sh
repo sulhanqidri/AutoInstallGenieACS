@@ -7,13 +7,13 @@ echo -e "${GREEN}==================== Script Install GenieACS All In One. ======
 echo -e "${GREEN}======================== NodeJS, MongoDB, GenieACS, ========================${NC}"
 echo -e "${GREEN}===================== By LSTNetwork. Info 085322692888 =====================${NC}"
 echo -e "${GREEN}============================================================================${NC}"
-echo -e "${GREEN}Sebelum melanjutkan, silahkan baca terlebih dahulu. Apakah anda ingin melanjutkan? (y/n)${NC}"
+echo -e "${GREEN}Apakah anda ingin melanjutkan? (y/n)${NC}"
 read confirmation
 if [ "$confirmation" != "y" ]; then
-    echo -e "${GREEN}Install dibatalkan. Tidak ada perubahan dalam ubuntu server anda.${NC}"
+    echo -e "${GREEN}Install dibatalkan. Tidak ada perubahan dalam server anda.${NC}"
     exit 1
 fi
-for ((i = 5; i >= 1; i--)); do
+for ((i = 3; i >= 1; i--)); do
 	sleep 1
     echo "Melanjutkan dalam $i. Tekan ctrl+c untuk membatalkan"
 done
@@ -169,6 +169,26 @@ else
     echo -e "${GREEN}============================================================================${NC}"
     echo -e "${GREEN}=================== GenieACS sudah terinstall sebelumnya. ==================${NC}"
 fi
+
+#Sukses
+echo -e "${GREEN}============================================================================${NC}"
+echo -e "${GREEN}========== GenieACS UI akses port 3000. : http://$local_ip:3000 ============${NC}"
+echo -e "${GREEN}=================== Informasi: Whatsapp 0853-2269-2888 =====================${NC}"
+echo -e "${GREEN}============================================================================${NC}"
+echo -e "${GREEN}Apakah mau install GenieACS MultiTab? (y/n)${NC}"
+read installtab
+if [ "$installtab" != "y" ]; then
+    echo -e "${GREEN}Install dibatalkan. Tidak ada perubahan dalam server anda.${NC}"
+    exit 1
+fi
+
+git clone https://github.com/sulhanqidri/MultiTabGenieACS
+
+cd MultiTabGenieACS
+
+chmod +x install.sh
+
+./install.sh
 
 #Sukses
 echo -e "${GREEN}============================================================================${NC}"
