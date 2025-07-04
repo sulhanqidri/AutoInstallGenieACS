@@ -1,4 +1,4 @@
-# Auto Moodle
+# Keterangan
 Pastikan sudah terinstall paket git dan curl terinstall. Jika belum ketikan perintah di bawah ini:
 Install terlebih dahulu
 
