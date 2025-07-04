@@ -182,8 +182,8 @@ if [ "$installtab" != "y" ]; then
     exit 1
 else
     echo -e "${GREEN}Multi tab full parameter? (y/n)${NC}"
-    read installtab
-    if [ "$installtab" != "y" ]; then
+    read installtabfull
+    if [ "$installtabfull" != "y" ]; then
         cd ..
         git clone https://github.com/sulhanqidri/MultiTabGenieACS
         cd MultiTabGenieACS
