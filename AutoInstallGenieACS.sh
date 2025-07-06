@@ -170,36 +170,21 @@ else
     echo -e "${GREEN}=================== GenieACS sudah terinstall sebelumnya. ==================${NC}"
 fi
 
-#Sukses
-echo -e "${GREEN}============================================================================${NC}"
-echo -e "${GREEN}========== GenieACS UI akses port 3000. : http://$local_ip:3000 ============${NC}"
-echo -e "${GREEN}=================== Informasi: Whatsapp 0853-2269-2888 =====================${NC}"
-echo -e "${GREEN}============================================================================${NC}"
 echo -e "${GREEN}Apakah mau install GenieACS MultiTab? (y/n)${NC}"
 read installtab
 if [ "$installtab" != "y" ]; then
-    echo -e "${GREEN}Install dibatalkan. Tidak ada perubahan dalam server anda.${NC}"
+    #Sukses
+    echo -e "${GREEN}============================================================================${NC}"
+    echo -e "${GREEN}========== GenieACS UI akses port 3000. : http://$local_ip:3000 ============${NC}"
+    echo -e "${GREEN}=================== Informasi: Whatsapp 0853-2269-2888 =====================${NC}"
+    echo -e "${GREEN}============================================================================${NC}"
+    cd ..
+    rm -r AutoInstallGenieACS
     exit 1
 else
-    echo -e "${GREEN}Multi tab full parameter? (y/n)${NC}"
-    read installtabfull
-    if [ "$installtabfull" != "y" ]; then
-        echo -e "${GREEN}MultiTab Kosong di install.${NC}"
-        exit 1
-    else
-        cd ..
-        git clone https://github.com/sulhanqidri/MultiTabGenieACS
-        cd MultiTabGenieACS
-        chmod +x install.sh
-        ./install.sh
-    fi
+    cd ..
+    git clone https://github.com/sulhanqidri/MultiTabGenieACS
+    cd MultiTabGenieACS
+    chmod +x install.sh
+    ./install.sh
 fi
-
-cd ..
-
-rm -r AutoInstallGenieACS/ MultiTabGenieACS/
-#Sukses
-echo -e "${GREEN}============================================================================${NC}"
-echo -e "${GREEN}========== GenieACS UI akses port 3000. : http://$local_ip:3000 ============${NC}"
-echo -e "${GREEN}=================== Informasi: Whatsapp 0853-2269-2888 =====================${NC}"
-echo -e "${GREEN}============================================================================${NC}"
